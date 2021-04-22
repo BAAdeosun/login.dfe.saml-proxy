@@ -49,6 +49,14 @@ stages:
         customRegistry: useFeed
         #customFeed: ${{parameters.customFeedId}}
         customFeed: '25763a8a-0ad8-43cf-a6a5-c0fcea6b74a7'
+    # Npm task for Lint    
+    - task: Npm@1
+      displayName: Lint
+      inputs:
+         command: custom
+         customCommand: run lint
+      continueOnError: true   
+
     - task: Npm@1
       displayName: Npm test
       inputs:
@@ -58,4 +66,17 @@ stages:
         customCommand: test --force
         customRegistry: useFeed
         customFeed: ${{parameters.customFeedId}}
-        continueOnError: true
+      continueOnError: true
+    
+    # Copy task  
+    - task: CopyFiles@2
+      displayName: copy files
+      inputs:
+        SourceFolder: $(Build.Repository.LocalPath)
+        Contents: |
+         package.json
+        TargetFolder: $(System.DefaultWorkingDirectory)/Publish
+        CleanTargetFolder: true
+
+
+
