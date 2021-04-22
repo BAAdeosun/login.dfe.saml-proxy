@@ -6,7 +6,7 @@
     "test": "jest --runInBand --coverage",
     "dev": "nodemon src/index.js --watch src",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix",
+    "lint:fix": "eslint src --fix"
   },
   "repository": {
     "type": "git",
