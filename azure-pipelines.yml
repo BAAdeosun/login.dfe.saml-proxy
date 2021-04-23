@@ -49,7 +49,7 @@ stages:
         customCommand: install --force --json --no-package-lock
         customRegistry: useFeed
         #customFeed: ${{parameters.customFeedId}}
-        customFeed: '25763a8a-0ad8-43cf-a6a5-c0fcea6b74a7'
+        #customFeed: '25763a8a-0ad8-43cf-a6a5-c0fcea6b74a7'
     # Npm task for Lint    
     - task: Npm@1
       displayName: Lint
@@ -66,7 +66,7 @@ stages:
         verbose: false
         customCommand: test --force
         customRegistry: useFeed
-        customFeed: ${{parameters.customFeedId}}
+        #customFeed: ${{parameters.customFeedId}}
       continueOnError: true
     
     # Copy task  
