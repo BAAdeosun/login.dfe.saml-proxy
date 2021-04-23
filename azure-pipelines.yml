@@ -24,8 +24,8 @@ pr:
     exclude:
     - develop
 
-variables:
-- group: platform-global
+#variables:
+#- group: platform-global
 
 stages:
 
